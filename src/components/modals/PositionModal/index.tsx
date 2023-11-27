@@ -26,7 +26,7 @@ const PositionModal = ({
   };
 
   return (
-    <ModalWrapper className='bg-blackish h-[50vh] max-h-[50vh] w-[384px] max-w-[384px] border-transparent shadow-[8px_8px_16px_0px_#0000003D]'>
+    <ModalWrapper className='bg-blackish h-[70vh] max-h-[90vh] w-[384px] max-w-[384px] border-transparent shadow-[8px_8px_16px_0px_#0000003D]'>
       <div className='border-black-300 flex items-center justify-between border-b px-4 py-3'>
         <div className='py-4 pl-4'>
           <X
