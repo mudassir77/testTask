@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import React, { useCallback, useState } from 'react';
 
 import Button from '@/components/buttons/Button';
@@ -11,6 +12,8 @@ import { APP_IMAGES } from '@/constant/images';
 const LoginPage = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
 
+  const router = useRouter();
+
   const handlePhoneNumberChange = useCallback((value: string) => {
     setPhoneNumber(value);
   }, []);
@@ -18,7 +21,8 @@ const LoginPage = () => {
   const handlePhoneSubmit = useCallback(() => {
     // eslint-disable-next-line no-console
     console.log('phone submit');
-  }, []);
+    router.push('/auth/verify');
+  }, [router]);
 
   return (
     <section className='bg-blackish flex min-h-screen w-full items-center justify-center pb-[174px]'>
@@ -42,7 +46,7 @@ const LoginPage = () => {
                 Sign in or create an account.
               </p>
             </div>
-            <div>
+            <div className='flex items-center'>
               <PhoneNumberInput
                 value={phoneNumber}
                 setValue={handlePhoneNumberChange}

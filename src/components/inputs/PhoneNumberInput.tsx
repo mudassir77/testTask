@@ -1,6 +1,9 @@
+import { ChevronsUpDown } from 'lucide-react';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
+
+import countryList from '@/country_dial_info.json';
 
 interface PhoneNumberInputProps {
   value: string;
@@ -17,10 +20,15 @@ const PhoneNumberInput = ({
     <>
       <div
         className={cn(
-          'bg-black-400 flex h-12 w-full items-stretch justify-center rounded-2xl border px-4',
+          'bg-black-400 flex h-12 w-full items-center justify-center rounded-2xl border px-4',
           isError ? 'border-red-500' : 'border-black-300'
         )}
       >
+        <div className='flex items-center space-x-1'>
+          <p>{countryList[0].flag}</p>
+          <p className='text-white-500 text-base'>{countryList[0].dial_code}</p>
+          <ChevronsUpDown className='text-white-500 w-4 cursor-pointer' />
+        </div>
         <input
           type='number'
           placeholder='Phone number'
@@ -37,6 +45,8 @@ const PhoneNumberInput = ({
           </p>
         </div>
       )}
+
+      {/* <CountryModal /> */}
     </>
   );
 };
