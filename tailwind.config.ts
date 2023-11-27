@@ -31,6 +31,7 @@ export default {
         blackish: '#141315',
         white: {
           500: '#FAFAFA',
+          800: '#FCFEFF',
           900: '#7F7E80',
         },
         black: {
